@@ -181,20 +181,20 @@ document.querySelectorAll('div.qtext').forEach((questionElement) => {
 
         let fillin = false;
         optionLabels.forEach((label) => {
-            const option = label.innerText.replace(/^[A-Da-d]\. /, '').trim();
+            const option = label.innerText.replace(/^[A-Ea-e]\. /, '').trim();
             if (option == correctAnswer) {
                 const input = label.previousElementSibling;
                 if (input && input.type === 'radio') {
                     input.click();
-                    console.log(`已填入答案：${correctAnswer}`);
+                    console.log(`Fill: ${correctAnswer}`);
                     fillin = true;
                 }
             }
         });
         if(!fillin) {
-            console.warn(`未找到答案選項：${correctAnswer}`);
+            console.warn(`Cannot find the corresponding answer in the options: ${correctAnswer}`);
         }
     } else {
-        console.warn(`未找到答案對應的題目：${question}`);
+        console.warn(`Cannot find the answer: ${question}`);
     }
 });
