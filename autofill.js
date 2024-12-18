@@ -182,7 +182,6 @@ document.querySelectorAll('div.qtext').forEach((questionElement) => {
         let fillin = false;
         optionLabels.forEach((label) => {
             const option = label.innerText.replace(/^[A-Da-d]\. /, '').trim();
-            console.log(option)
             if (option == correctAnswer) {
                 const input = label.previousElementSibling;
                 if (input && input.type === 'radio') {
