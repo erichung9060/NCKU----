@@ -69,7 +69,7 @@ const questionAnswers =
     "How many hours of basic courses on biosafety and biosecurity do new employees of a laboratory or storage facility need to attend at least?": "8",
     "Which one is NOT suggested for biomedical waste containers?": "Styrofoam container",
     "平時須了解實驗場所之": "以上皆是",
-    "為落實緊急應變的承諾與決心，事業單位應指派何人，擔任小組負責人並積極參與": "高階管理人員",
+    "為落實緊急應變的承諾與決心，事業單位應指派何人，擔任小組負責人並積極參與": "高階管理人員爆炸物",
     "於勞動契約續存中，由雇主所提示，使勞工履行契約提供勞務之場所，為職業安全衛生法所稱": "勞動場所",
     "化學品的於實驗室中的暴露濃度，若只有瞬間高於法定的容許濃度還不會影響健康，所以不用配帶防護具作實驗也沒關係。": "否",
     "觸電是否會導致嚴重後果須視通過人體電流、通過人體部位、感電時間而定。": "是",
@@ -181,7 +181,8 @@ document.querySelectorAll('div.qtext').forEach((questionElement) => {
 
         let fillin = false;
         optionLabels.forEach((label) => {
-            const option = label.innerText.replace(/^[A-D]\. /, '').trim();
+            const option = label.innerText.replace(/^[A-Da-d]\. /, '').trim();
+            console.log(option)
             if (option == correctAnswer) {
                 const input = label.previousElementSibling;
                 if (input && input.type === 'radio') {
